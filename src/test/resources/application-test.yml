@@ -1,0 +1,22 @@
+micronaut:
+  server:
+    port: 8080
+
+kafka:
+  embedded.enabled: true
+  schema:
+    registry:
+      url: ${SCHEMA_REGISTRY_URL:`http://localhost:8080`}
+  client.id: ${random.uuid}
+  consumers:
+    default:
+      value:
+        serializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      key:
+        serializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+  producers:
+    default:
+      value:
+        serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+      key:
+        serializer: io.confluent.kafka.serializers.KafkaAvroSerializer

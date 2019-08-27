@@ -1,0 +1,9 @@
+---
+micronaut:
+  application:
+    name: notification-aggregator
+
+---
+kafka:
+  bootstrap:
+    servers: localhost:9092

@@ -1,0 +1,18 @@
+{
+  "type": "record",
+  "doc":"This event records the sale of a product",
+  "name": "RecordStatusEvent",
+  "fields" : [
+    {"name":"upload_time", "type":"long", "doc":"The time of the purchase"},
+    {"name":"numrows", "type":"int", "doc":"Number of records in the submission"},
+    {"name":"rownum", "type":"int", "doc":"Row number of the submission"},
+    {"name":"upload_id", "type":"long", "doc":"The product"},
+    {"name":"filename", "type":"string", "doc":"name of the file"},
+    {"name":"quantity", "type":"int"},
+    {"name":"pathogen",
+      "type":{"type":"enum",
+        "name":"pathogen_types",
+        "symbols":["dhqp","cre","crpa"]},
+      "doc":"The pathogen reported"}
+  ]
+}
